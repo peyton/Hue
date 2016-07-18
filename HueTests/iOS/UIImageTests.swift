@@ -6,7 +6,7 @@ class UIImageTests: XCTestCase {
 
   func testImageColors() {
     let accuracy: CGFloat = 0.001
-    let bundle = NSBundle(forClass: self.classForCoder)
+    let bundle = Bundle(for: self.classForCoder)
     let path = bundle.pathForResource("Random Access Memories", ofType: "png")!
     let image = UIImage(contentsOfFile: path)!
 
