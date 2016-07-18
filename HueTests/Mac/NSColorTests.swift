@@ -64,11 +64,11 @@ class NSColorTests: XCTestCase {
     XCTAssertTrue(testGradient.isKindOfClass(CAGradientLayer))
     XCTAssertEqual(testGradient.colors?.count, 2)
     XCTAssertEqual(
-      CGColorSpaceGetModel(CGColorGetColorSpace((testGradient.colors as! [CGColor])[0])),
-      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.blackColor().CGColor)))
+      CGColorSpaceGetModel(CGColorGetColorSpace((testGradient.colors as! [CGColor])[0])!),
+      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.blackColor().CGColor)!))
     XCTAssertEqual(
-      CGColorSpaceGetModel(CGColorGetColorSpace((testGradient.colors as! [CGColor])[1])),
-      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.orangeColor().CGColor)))
+      CGColorSpaceGetModel(CGColorGetColorSpace((testGradient.colors as! [CGColor])[1])!),
+      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.orangeColor().CGColor)!))
 
     let testGradientWithLocation = [NSColor.blueColor(), NSColor.yellowColor()].gradient { gradient in
       gradient.locations = [0.25, 1.0]
@@ -78,11 +78,11 @@ class NSColorTests: XCTestCase {
     XCTAssertTrue(testGradient.isKindOfClass(CAGradientLayer))
     XCTAssertEqual(testGradient.colors?.count, 2)
     XCTAssertEqual(
-      CGColorSpaceGetModel(CGColorGetColorSpace((testGradientWithLocation.colors as! [CGColor])[0])),
-      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.blueColor().CGColor)))
+      CGColorSpaceGetModel(CGColorGetColorSpace((testGradientWithLocation.colors as! [CGColor])[0])!),
+      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.blueColor().CGColor)!))
     XCTAssertEqual(
-      CGColorSpaceGetModel(CGColorGetColorSpace((testGradientWithLocation.colors as! [CGColor])[1])),
-      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.yellowColor().CGColor)))
+      CGColorSpaceGetModel(CGColorGetColorSpace((testGradientWithLocation.colors as! [CGColor])[1])!),
+      CGColorSpaceGetModel(CGColorGetColorSpace(NSColor.yellowColor().CGColor)!))
     XCTAssertEqual(testGradientWithLocation.locations!, [0.25,1.0])
   }
   
